@@ -1,2 +1,381 @@
-# Birthday-special-
-Birthday celebration 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Happy Birthday Lolu ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    height:100vh;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#ff4e8a,#ff9eb5,#ffd6df);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+/* Floating Hearts */
+
+.heart{
+    position:absolute;
+    width:15px;
+    height:15px;
+    background:red;
+    transform:rotate(45deg);
+    animation:float 8s linear infinite;
+    opacity:.7;
+}
+
+.heart::before,
+.heart::after{
+    content:'';
+    width:15px;
+    height:15px;
+    background:red;
+    border-radius:50%;
+    position:absolute;
+}
+
+.heart::before{
+    top:-7px;
+    left:0;
+}
+
+.heart::after{
+    left:-7px;
+    top:0;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh) rotate(45deg);
+        opacity:0;
+    }
+
+    100%{
+        transform:translateY(-120vh) rotate(45deg);
+        opacity:1;
+    }
+}
+
+/* Petals */
+
+.petal{
+    position:absolute;
+    width:15px;
+    height:15px;
+    background:pink;
+    border-radius:50% 0 50% 0;
+    animation:fall linear infinite;
+    opacity:.8;
+}
+
+@keyframes fall{
+    0%{
+        transform:translateY(-10vh) rotate(0deg);
+    }
+
+    100%{
+        transform:translateY(110vh) rotate(720deg);
+    }
+}
+
+/* Main Card */
+
+.card{
+    position:relative;
+    z-index:10;
+    width:90%;
+    max-width:700px;
+    padding:40px;
+    border-radius:30px;
+    text-align:center;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    border:2px solid rgba(255,255,255,0.3);
+    box-shadow:0 0 30px rgba(255,255,255,.4);
+}
+
+.title{
+    color:white;
+    font-size:3rem;
+    margin-bottom:20px;
+    text-shadow:0 0 10px white;
+}
+
+.text{
+    color:white;
+    font-size:1.2rem;
+    margin-bottom:25px;
+}
+
+/* Button */
+
+.btn{
+    padding:15px 40px;
+    border:none;
+    border-radius:50px;
+    background:white;
+    color:#ff2e78;
+    font-size:1.2rem;
+    font-weight:700;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+    background:#ff2e78;
+    color:white;
+}
+
+/* Question */
+
+.question{
+    color:white;
+    font-size:2rem;
+    margin-bottom:30px;
+}
+
+/* Yes No Buttons */
+
+.choice-buttons{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.choice{
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    font-size:1.2rem;
+    cursor:pointer;
+    transition:.4s;
+    font-weight:700;
+}
+
+.yes{
+    background:#ff0066;
+    color:white;
+}
+
+.no{
+    background:#222;
+    color:white;
+}
+
+.choice:hover{
+    transform:scale(1.1);
+}
+
+/* Final Page */
+
+.final-content{
+    color:white;
+    animation:fadeIn 1s ease;
+}
+
+.final-content img{
+    width:250px;
+    max-width:90%;
+    margin-bottom:20px;
+    border-radius:20px;
+    box-shadow:0 0 30px rgba(255,255,255,.6);
+}
+
+.shayri{
+    font-size:1.2rem;
+    line-height:2;
+    margin-top:20px;
+}
+
+.love{
+    margin-top:25px;
+    font-size:2rem;
+    font-weight:700;
+    color:white;
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.1);}
+    100%{transform:scale(1);}
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+
+    .title{
+        font-size:2.2rem;
+    }
+
+    .question{
+        font-size:1.5rem;
+    }
+
+    .shayri{
+        font-size:1rem;
+    }
+
+    .love{
+        font-size:1.5rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card" id="mainCard">
+
+    <h1 class="title">🎂 Happy Birthday Lolu ❤️</h1>
+
+    <p class="text">
+        I have a beautiful surprise for you 💕
+    </p>
+
+    <button class="btn" id="surpriseBtn">
+        🎁 Surprise
+    </button>
+
+</div>
+
+<script>
+
+/* Hearts Background */
+
+for(let i=0;i<35;i++){
+
+    let heart=document.createElement("div");
+    heart.classList.add("heart");
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(4+Math.random()*5)+"s";
+
+    document.body.appendChild(heart);
+}
+
+/* Petals Background */
+
+for(let i=0;i<40;i++){
+
+    let petal=document.createElement("div");
+    petal.classList.add("petal");
+
+    petal.style.left=Math.random()*100+"vw";
+    petal.style.animationDuration=(5+Math.random()*6)+"s";
+
+    petal.style.background=
+    hsl(${Math.random()*40+320},100%,80%);
+
+    document.body.appendChild(petal);
+}
+
+/* Surprise Button */
+
+document.getElementById("surpriseBtn").onclick=function(){
+
+    document.getElementById("mainCard").innerHTML=`
+
+        <div class="question">
+            Do You Really Love Me? ❤️
+        </div>
+
+        <div class="choice-buttons">
+
+            <button class="choice yes" onclick="showLove()">
+                Yes 💖
+            </button>
+
+            <button class="choice no" onclick="showSad()">
+                No 💔
+            </button>
+
+        </div>
+
+    `;
+}
+
+/* YES */
+
+function showLove(){
+
+    document.getElementById("mainCard").innerHTML=`
+
+        <div class="final-content">
+
+            <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+
+            <h1 style="margin-bottom:20px;">🌸 Wife 🌸</h1>
+
+            <div class="shayri">
+
+                Teri hasi ka asar kuch aisa chhaya hai,<br>
+                Har din mera bas tere naam se sajaya hai.<br>
+                Tu paas ho toh har gham bhi halka lagta hai,<br>
+                Meri zindagi ka sabse khoobsurat hissa tu hi banaya hai. ❤️
+
+            </div>
+
+            <div class="love">
+                I Love You Wife ❤️
+            </div>
+
+        </div>
+
+    `;
+}
+
+/* NO */
+
+function showSad(){
+
+    document.getElementById("mainCard").innerHTML=`
+
+        <div class="final-content">
+
+            <img src="https://media.giphy.com/media/OPU6wzx8JrHna/giphy.gif">
+
+            <div class="love" style="color:#fff;">
+                💔 You Broke My Heart 💔
+            </div>
+
+            <div class="shayri" style="margin-top:20px;">
+                But I will always love you forever ❤️
+            </div>
+
+        </div>
+
+    `;
+}
+
+</script>
+
+</body>
+</html>
