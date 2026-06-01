@@ -435,6 +435,23 @@ body{
     height:100vh;
     object-fit:cover;
 }
+    .btn{
+
+    opacity:0;
+
+    transform:translateY(120px);
+
+    transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.show-btn{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
 </style>
 
 </head>
@@ -744,23 +761,27 @@ function showSad(){
 
     `;
 }
-document.getElementById("startBtn").addEventListener("click",()=>{
+const video = document.getElementById("introVideo");
 
-    document.getElementById("startScreen").style.display="none";
-
-    document.getElementById("videoScreen").style.display="block";
-
-    const video=document.getElementById("introVideo");
+window.onload = () => {
 
     video.play();
 
-    setTimeout(()=>{
+};
 
-        document.getElementById("videoScreen").style.display="none";
+video.addEventListener("ended", () => {
 
-        document.getElementById("mainContent").style.display="block";
+    video.pause();
 
-    },6000);
+    setTimeout(() => {
+
+        document.getElementById("videoScreen").style.display = "none";
+
+        document.getElementById("mainContent").style.display = "block";
+
+        document.querySelector(".btn").classList.add("show-btn");
+
+    }, 1000);
 
 });
 </script>
