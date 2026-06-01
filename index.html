@@ -172,7 +172,8 @@ body{
 /* Buttons */
 
 .btn,
-.memory-btn{
+.memory-btn,
+.again-yes{
     padding:18px 45px;
     border:none;
     border-radius:100px;
@@ -193,7 +194,8 @@ body{
 }
 
 .btn:hover,
-.memory-btn:hover{
+.memory-btn:hover,
+.again-yes:hover{
 
     transform:scale(1.08) translateY(-5px);
 
@@ -269,6 +271,12 @@ body{
     font-size:2rem;
     font-weight:700;
     animation:pulse 1.5s infinite;
+}
+
+.sad-emoji{
+    font-size:120px;
+    margin-bottom:20px;
+    animation:pulse 2s infinite;
 }
 
 @keyframes pulse{
@@ -384,9 +392,14 @@ body{
     }
 
     .btn,
-    .memory-btn{
+    .memory-btn,
+    .again-yes{
         padding:15px 30px;
         font-size:1rem;
+    }
+
+    .sad-emoji{
+        font-size:90px;
     }
 }
 
@@ -512,24 +525,23 @@ function showLove(){
             src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
 
             <h1 style="margin-bottom:20px;">
-                🌸 Wife 🌸
+                🌸 My Beautiful Wife 🌸
             </h1>
 
             <div class="shayri">
 
-                Teri hasi ka asar kuch aisa chhaya hai,<br>
+                Teri hasi meri duniya ka sabse pyara ehsaas hai ❤️<br>
 
-                Har din mera bas tere naam se sajaya hai.<br>
+                Tera saath meri zindagi ki sabse khoobsurat baat hai ✨<br>
 
-                Tu paas ho toh har gham bhi halka lagta hai,<br>
+                Har dua mein sirf tera naam maanga hai maine 💕<br>
 
-                Meri zindagi ka sabse khoobsurat hissa
-                tu hi banaya hai ❤️
+                Aur har janam mein sirf tujhe hi chaha hai ❤️
 
             </div>
 
             <div class="love">
-                I Love You Wife ❤️
+                I Love You Forever ❤️
             </div>
 
             <button class="memory-btn"
@@ -551,7 +563,7 @@ function showLove(){
                         </div>
 
                         <div class="slide">
-                            <img src="https://i.ibb.co/KjLrv8xf/Screenshot-2026-05-22-22-16-07-02-f9ee0578fe1cc94de7482bd41accb329.jpg">
+                            <img src="https://picsum.photos/id/1025/1200/800">
                         </div>
 
                         <div class="slide">
@@ -564,26 +576,6 @@ function showLove(){
 
                         <div class="slide">
                             <img src="https://picsum.photos/id/1050/1200/800">
-                        </div>
-
-                        <div class="slide">
-                            <img src="https://picsum.photos/id/1062/1200/800">
-                        </div>
-
-                        <div class="slide">
-                            <img src="https://picsum.photos/id/1074/1200/800">
-                        </div>
-
-                        <div class="slide">
-                            <img src="https://picsum.photos/id/1084/1200/800">
-                        </div>
-
-                        <div class="slide">
-                            <img src="https://picsum.photos/id/1080/1200/800">
-                        </div>
-
-                        <div class="slide">
-                            <img src="https://picsum.photos/id/1005/1200/800">
                         </div>
 
                     </div>
@@ -666,16 +658,35 @@ function showSad(){
 
         <div class="final-content">
 
-            <img class="main-gif"
-            src="https://media.giphy.com/media/OPU6wzx8JrHna/giphy.gif">
+            <div class="sad-emoji">
+                🥺
+            </div>
 
             <div class="love">
-                💔 You Broke My Heart 💔
+                It's Okay My Love ❤️
             </div>
 
             <div class="shayri">
-                But I will always love you forever ❤️
+
+                Shayad tumhe abhi ehsaas nahi hai ❤️<br>
+
+                Par mera dil sirf tumhare liye dhadakta hai 💕<br>
+
+                Aur waise bhi... tumhare paas ek hi option hai 😌✨<br><br>
+
+                Bas "Yes" bolo aur mujhe duniya ka
+                sabse khush insaan bana do ❤️
+
             </div>
+
+            <br><br>
+
+            <button class="again-yes"
+            onclick="showLove()">
+
+                💖 Okay Fine... Yes 💖
+
+            </button>
 
         </div>
 
