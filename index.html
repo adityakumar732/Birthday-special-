@@ -467,9 +467,9 @@ body{
 
 <div id="videoScreen" style="display:none;">
 
-    <video id="introVideo" playsinline>
-        <source src="1024X768(1).mp4" type="video/mp4">
-    </video>
+    <video id="introVideo" playsinline preload="auto">
+    <source src="1024X768(1).mp4" type="video/mp4">
+</video>
 
 </div>
 
@@ -761,13 +761,23 @@ function showSad(){
 
     `;
 }
+/* START BUTTON + VIDEO */
+
+const startBtn = document.getElementById("startBtn");
+const startScreen = document.getElementById("startScreen");
+const videoScreen = document.getElementById("videoScreen");
+const mainContent = document.getElementById("mainContent");
 const video = document.getElementById("introVideo");
 
-window.onload = () => {
+startBtn.addEventListener("click", () => {
+
+    startScreen.style.display = "none";
+
+    videoScreen.style.display = "block";
 
     video.play();
 
-};
+});
 
 video.addEventListener("ended", () => {
 
@@ -775,11 +785,12 @@ video.addEventListener("ended", () => {
 
     setTimeout(() => {
 
-        document.getElementById("videoScreen").style.display = "none";
+        videoScreen.style.display = "none";
 
-        document.getElementById("mainContent").style.display = "block";
+        mainContent.style.display = "block";
 
-        document.querySelector(".btn").classList.add("show-btn");
+        document.getElementById("surpriseBtn")
+        .classList.add("show-btn");
 
     }, 1000);
 
